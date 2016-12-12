@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Prototype Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Calculator</h1>
+    </div>
+    <div id="eq"></div>
+    <form class="input-wrapper">
+        <div class="input-row">
+            <div class="col-lg-8">
+                Put in the first number:
+            </div>
+            <input type="text" id="input-a" class="col-lg-4"></br>
+        </div>
+        <div class="input-row">
+            <div class="col-lg-8">
+                Put in the second number:
+            </div>
+            <input type="text" id="input-b" class="col-lg-4"></br>
+        </div>
+        <div class="col-lg-8">
+            Select Add or Subtract:
+        </div>
+        <select class="col-lg-4" name="" id="selector">
+          <option value="addition">Add</option>
+          <option value="subtraction">Subtract</option>
+          <option value="multiplication">Multiply</option>
+          <option value="division">Divide</option>
+        </select>
+
+        <div class="clearfix"></div>
+
+        <div class="button-wrapper">
+            <button type="button" name="button" onClick="addInputs()">Calculate</button>
+        </div>
+    </form>
+    <div id="answerMe"></div>
+</body>
+
+<script type="text/javascript">
+    var addInputs = function() {
+        var inputA = document.getElementById("input-a").value,
+            inputB = document.getElementById("input-b").value;
+            selection = document.getElementById("selector");
+
+    if (selection[selection.selectedIndex].value === "addition") {
+      document.getElementById("answerMe").innerHTML = Number(inputA) + Number(inputB);
+    } else if (selection[selection.selectedIndex].value === "subtraction") {
+      document.getElementById("answerMe").innerHTML = Number(inputA) - Number(inputB);
+    } else if (selection[selection.selectedIndex].value === "multiplication") {
+      document.getElementById("answerMe").innerHTML = Number(inputA) * Number(inputB);
+    } else { document.getElementById("answerMe").innerHTML = Number(inputA) / Number(inputB); }
+
+    };
+
+
+    // window.onload = function() {
+    //   var c = new Calculator('eq');
+    //   // c.add(3,4);
+    // };
+    //
+    // var Calculator = function(eq) {
+    //   this.eqCtl = document.getElementById(eq);
+    // };
+    //
+    // Calculator.prototype = {
+    //   add: function(x, y)    {
+    //     var val = x + y;
+    //     this.eqCtl.innerHTML = val;
+    //   }
+    // };
+</script>
+
+</html>

@@ -5,44 +5,109 @@
     <meta charset="utf-8">
     <title>Prototype Demo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="scripts/scripts-practice.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <h1>Calculator</h1>
-    </div>
+  <div class="header-wrapper">
+    <h2>Web Dev Practice</h2>
+    <p>This is a very simple HTML page</p>
+  </div>
+
+<div class="body-wrapper">
+<div class="content-box-wrapper">
+  <div class="content-box">
+
     <div id="eq"></div>
     <form class="input-wrapper">
         <div class="input-row">
-            <div class="col-lg-8">
+            <div>
                 Put in the first number:
             </div>
-            <input type="text" id="input-a" class="col-lg-4"></br>
+            <input type="text" id="input-a"></br>
         </div>
         <div class="input-row">
-            <div class="col-lg-8">
+            <div>
                 Put in the second number:
             </div>
-            <input type="text" id="input-b" class="col-lg-4"></br>
+            <input type="text" id="input-b"></br>
         </div>
-        <div class="col-lg-8">
+        <div>
             Select Add or Subtract:
         </div>
-        <select class="col-lg-4" name="" id="selector">
+        <select name="" id="selector">
           <option value="addition">Add</option>
           <option value="subtraction">Subtract</option>
           <option value="multiplication">Multiply</option>
           <option value="division">Divide</option>
         </select>
 
-        <div class="clearfix"></div>
-
         <div class="button-wrapper">
             <button type="button" name="button" onClick="addInputs()">Calculate</button>
         </div>
     </form>
     <div id="answerMe"></div>
+  </div>
+
+  <!-- Strings practice -->
+  	<div class="content-box">
+  		<h4>Strings, Arrays, and Loops Practice</h4>
+  		<h5>Enter your sentence here:</h5>
+  		<div class="sentence-wrapper" id="sentence-getter">
+  			<input type="text" name="sentence-input" value="" id="sentence-input">
+  			<button type="button" name="sentence-button" id="sentence-btn" onclick="sentenceCase()">Submit</button>
+  		</div>
+  		<h5>And it will be put into sentence case here:</h5>
+  		<div id="sentence-output" class="a-output"></div>
+  	</div>
+
+  <!-- Show the correct gas price based on the input -->
+  	<div class="content-box">
+  		<h4>Switch Practice</h4>
+  		<h5>Enter the type of gas you buy:</h5>
+  		<select class="gas-choice" name="gas-input" id="gas-type">
+  			<option value="Premium">Premium</option>
+  			<option value="Mid-grade">Mid-grade</option>
+  			<option value="Regular">Regular</option>
+  		</select>
+  		<button type="button" name="gas-button" onclick="gasPrice()" id="gas-button">Submit</button>
+  		<div id="gas-output" class="a-output"></div>
+  	</div>
+
+  <!-- Search Overstock's website -->
+  	<div class="content-box">
+  		<h4>Search Box Practice</h4>
+  		<h5>Search Overstock.com</h5>
+  		<form action="https://www.overstock.com/search">
+  			<input type="hidden" name="refineSale" value="On Sale">
+  			<input type="text" name="keywords" value="" placeholder="Search for... on Overstock">
+  			<button class="search-icon" type="button" formtarget="_blank"><img src="images/magnifying-glass-search-128.png" alt=""></button>
+  		</form>
+  		<h5>Search Amazon.com</h5>
+  		<form action="https://www.amazon.com">
+  			<input type="text" name="" value="" placeholder="Search for... on Amazon">
+  			<button class="search-icon" type="button" name="button" formtarget="_blank"><img src="images/magnifying-glass-search-128.png" alt=""></button>
+  		</form>
+  	</div>
+
+  	<!-- On/Off Switch -->
+  	<div class="content-box">
+
+  	</div>
+
+  <!-- End Content-Box Wrapper -->
+  </div>
+  <div class="footer-wrapper">
+  	<div class="footer-stripe"></div>
+  	<p>Copyright &#169;: Liz 2017</p>
+  </div>
+
+  <!-- End Main Body Wrapper -->
+  </div>
+<script src="script.js"></script>
+
+
 </body>
 
 <script type="text/javascript">

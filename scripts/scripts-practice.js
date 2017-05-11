@@ -1,3 +1,15 @@
+// var mainHeaderWrapper = document.getElementsByClassName('header-wrapper');
+//
+// console.log(mainHeaderWrapper);
+//
+// mainHeaderWrapper[0].onclick = function() {
+//   console.log('Welcome to Web Dev Practice');
+// };
+//getElementsByClassName creates an array, so either need to specify the index or loop through the array
+
+// var divArray = document.getElementsByClassName('divider');
+// console.log(divArray);
+
 //Calculator functionality
     // Gets input
     var addInputs = function() {
@@ -79,7 +91,7 @@ var psychOut = function() {
   //grab id
   var thirdHeader = document.getElementById('third-header');
   //set onclick event
-  
+
   //tiny for practice
   var counter = 0;
   for (var i = 0; i < 100; i++) {
@@ -90,11 +102,11 @@ var psychOut = function() {
 
 
   //Carousel
-$(document).ready(function() {
-  $('#nature-carousel').carousel({
-    interval: 2000
-  });
-});
+// $(document).ready(function() {
+//   $('#nature-carousel').carousel({
+//     interval: 2000
+//   });
+// });
 
 //Players
 var player1 = {
@@ -124,12 +136,68 @@ player2.logDetails = playerDetails;
 
 //To Do List
 function toDoList () {
-  var input = document.getElementById('to-do-list-input').value, 
+  var input = document.getElementById('to-do-list-input').value,
       li = document.createElement('li'),
       newToDoItem = document.createTextNode(input);
-    
+
       li.appendChild(newToDoItem);
   document.getElementById('to-do-ul').appendChild(li);
-    
+
 };
-  
+
+//Rotating, non-controllable carousel
+imagesArray = ['images/caiman.jpg', 'images/dawn.jpeg', 'images/fieldkitten.jpeg', 'images/fireworks2.jpeg']
+
+var changer = document.getElementById('hgc-img-img'); //grabs the place where the image is declared
+var imageIndex = 0; //sets the array location to the first position
+
+var rotate = function() {
+  changer.setAttribute('src', imagesArray[imageIndex]);
+  imageIndex++; //changes the src attribute of the particular image index, then moves up the image once more
+  if (imageIndex >= imagesArray.length) {
+    imageIndex = 0; //resets the image array index
+  }
+}
+
+setInterval(rotate, 5000);
+
+//Get + Reset attributes
+// var hipsterIpsum = document.getElementById('hipster-ipsum');
+//
+// hipsterIpsum.setAttribute('align', 'right');
+//
+// var mainTitle = document.getElementById('main-title');
+// console.log(mainTitle.innerHTML);
+
+
+//Code for Dynamic Pony Content
+//create elements
+// var ponyHeader = document.createElement('h1');
+// var ponyText = document.createElement('p');
+//
+// //insert text
+// var newHead = document.createTextNode("Details About My Little Pony");
+// var newText = document.createTextNode("Pegasus Discord Flash Sentry Shining Armor Maud Pie. Princess Luna Shining Armor cloud Twist.")
+
+//append text nodes to the content nodes
+// ponyHeader.appendChild(newHead);
+// ponyText.appendChild(newText);
+
+//insert text-filled elements on page
+// document.getElementById('dynamic-pony-content').appendChild(ponyHeader);
+// document.getElementById('dynamic-pony-content').appendChild(ponyText);
+
+//Code for timer and an alert
+var fiveMinAlert = function() {
+  alert('You have been on this page for five minutes without refreshing.');
+}
+setTimeout(fiveMinAlert, 300000); //set timeout happens just once. setInterval() allows the function to happen multiple times, at the set interval. For example, you can switch an image every 5 seconds by looping through an array.
+
+//Interests checkbox show/hide
+var hider = $('#cb-inner');
+var revealer = $('#revealer');
+console.log(hider, revealer);
+
+var mainChecked = function() {
+  console.log('working');
+}

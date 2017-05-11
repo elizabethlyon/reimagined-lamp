@@ -1,0 +1,10 @@
+{
+  "name": "reimagined-lamp",
+  "version": "0.0.5",
+  "author": "Liz Lyon",
+  "email": "elizabethlainlyon@gmail.com",
+  "gitUsername": "elizabethlyon",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
+}

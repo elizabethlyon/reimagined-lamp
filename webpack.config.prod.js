@@ -61,11 +61,20 @@ module.exports = {
       }
     ]
   },
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'dist/bundle.js'),
-  //   hot: true
-  // },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist/'),
+    hot: true,
+    port: 8000,
+    open: true,
+    quiet: true,
+    compress: true
+  },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
     new HtmlWebpackPlugin({
       title: 'Skill Practice',
       template: './src/templates/base.ejs'
@@ -73,14 +82,15 @@ module.exports = {
     new ExtractTextPlugin('styles.less'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.js',
-      minChunks: Infinity
+      filename: 'vendor.js'
     }),
     new webpack.ProvidePlugin(
       {
         $: 'jquery',
         JQuery: 'jQuery'
-      })
-    // new OpenBrowserPlugin('http://localhost:8080'),
+      }),
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
+    // new OpenBrowserPlugin('http://localhost:8000')
   ]
 }
